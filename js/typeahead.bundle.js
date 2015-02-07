@@ -1018,11 +1018,6 @@
             _managePreventDefault: function managePreventDefault(keyName, $e) {
                 var preventDefault, hintValue, inputValue;
                 switch (keyName) {
-                  case "enter":
-                      hintValue = this.getHint();
-                      inputValue = this.getInputValue();
-                      preventDefault = hintValue && hintValue !== inputValue && !withModifier($e);
-                      break;
                   case "tab":
                     hintValue = this.getHint();
                     inputValue = this.getInputValue();
@@ -1045,10 +1040,6 @@
                   case "tab":
                     trigger = !withModifier($e);
                     break;
-                  case "enter":
-                    trigger = !withModifier($e);
-                    break;
-
 
                   default:
                     trigger = true;
@@ -1534,7 +1525,7 @@
                 this.dropdown.close();
             },
             _onEnterKeyed: function onEnterKeyed(type, $e) {
-                var cursorDatum, topSuggestionDatum;
+                /*var cursorDatum, topSuggestionDatum;
                 cursorDatum = this.dropdown.getDatumForCursor();
                 topSuggestionDatum = this.dropdown.getDatumForTopSuggestion();
                 if (cursorDatum) {
@@ -1543,6 +1534,13 @@
                 } else if (this.autoselect && topSuggestionDatum) {
                     this._select(topSuggestionDatum);
                     $e.preventDefault();
+                }*/
+                var datum;
+                if (datum = this.dropdown.getDatumForCursor()) {
+                    this._select(datum);
+                    $e.preventDefault();
+                } else {
+                    this._autocomplete(true);
                 }
             },
             _onTabKeyed: function onTabKeyed(type, $e) {
