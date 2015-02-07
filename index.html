@@ -14,16 +14,17 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+        
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	</head>
 	<body>
 		<div id="morphsearch" class="morphsearch">
-				<form class="morphsearch-form">
-					<input class="morphsearch-input" type="search" placeholder="Search..."/>
+				<div id="#multiple-datasets" class="morphsearch-form">
+					<input class="morphsearch-input typeahead" type="text" placeholder="Search..."/>
 					<button class="morphsearch-submit" type="submit">Search</button>
-				</form>
+                </div>
 				<div class="morphsearch-content">
 					<div class="dummy-column">
 						<h2>Academics</h2>
@@ -135,6 +136,11 @@
 					</div>
 				</div><!-- /morphsearch-content -->
 			</div><!-- /morphsearch -->
-		
+    	<script src="js/handlebars.js"></script>
+		<script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/typeahead.bundle.js"></script>
+		<script src="js/search.js"></script>
+        
+
 	</body>
 </html>
