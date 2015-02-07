@@ -1534,13 +1534,16 @@
                 } else if (this.autoselect && topSuggestionDatum) {
                     this._select(topSuggestionDatum);
                     $e.preventDefault();
-                }*/
+                }*/ // original function; didn't seem to do anything
+
+
                 var datum;
                 if (datum = this.dropdown.getDatumForCursor()) {
                     this._select(datum);
                     $e.preventDefault();
                 } else {
-                    this._autocomplete(true);
+                    //this._autocomplete(true);   // !!! now make it link to the this's url field?
+                    this._select(datum);
                 }
             },
             _onTabKeyed: function onTabKeyed(type, $e) {
