@@ -1542,9 +1542,12 @@
                     this._select(datum);
                     $e.preventDefault();
                 } else {
-                    //this._autocomplete(true);   // !!! now make it link to the this's url field?
-                    this.trigger("suggestionClicked", $($e.currentTarget));
-                }
+                    //this._autocomplete(true);  // !!! now make it link to the this's url field?
+                        if (datum = this.dropdown.getDatumForSuggestion($e)) {
+                            this._select(datum);
+                        }
+                    }
+
             },
             _onTabKeyed: function onTabKeyed(type, $e) {
                 var datum;
