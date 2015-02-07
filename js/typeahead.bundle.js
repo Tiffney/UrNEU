@@ -1543,7 +1543,7 @@
                     $e.preventDefault();
                 } else {
                     //this._autocomplete(true);   // !!! now make it link to the this's url field?
-                    this._select(datum);
+                    this.trigger("suggestionClicked", $($e.currentTarget));
                 }
             },
             _onTabKeyed: function onTabKeyed(type, $e) {
