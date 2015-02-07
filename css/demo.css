@@ -7,7 +7,6 @@
 .clearfix:after { clear: both; }
 
 body {
-	background: #ff3737 url(../img/unsplash.jpg) no-repeat center bottom;
 	color: #ff3737;
 	font-size: 1em;
 	font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;

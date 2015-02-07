@@ -19,16 +19,7 @@
 		<![endif]-->
 	</head>
 	<body>
-		<div class="container">
-			<aside class="sidebar clearfix">
-				<nav>
-					<a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
-					<a href="#"><i class="fa fa-fw fa-heart-o"></i></a>
-					<a href="#"><i class="fa fa-fw fa-send-o"></i></a>
-					<a href="#"><i class="fa fa-fw fa-smile-o"></i></a>
-				</nav>
-			</aside>
-			<div id="morphsearch" class="morphsearch">
+		<div id="morphsearch" class="morphsearch">
 				<form class="morphsearch-form">
 					<input class="morphsearch-input" type="search" placeholder="Search..."/>
 					<button class="morphsearch-submit" type="submit">Search</button>
@@ -143,69 +134,7 @@
 						</a>
 					</div>
 				</div><!-- /morphsearch-content -->
-				<span class="morphsearch-close"></span>
 			</div><!-- /morphsearch -->
-			<header class="codrops-header">
-				<h1>Morphing Search <span>A search input that morphs into a fullscreen search page.</span></h1>
-				<div class="codrops-links">
-					<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/WobblySlideshowEffect/"><span>Previous Demo</span></a>
-					<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=21106"><span>Back to the Codrops Article</span></a>
-				</div>
-			</header>
-			<div class="overlay"></div>
-		</div><!-- /container -->
-		<script src="js/classie.js"></script>
-		<script>
-			(function() {
-				var morphSearch = document.getElementById( 'morphsearch' ),
-					input = morphSearch.querySelector( 'input.morphsearch-input' ),
-					ctrlClose = morphSearch.querySelector( 'span.morphsearch-close' ),
-					isOpen = isAnimating = false,
-					// show/hide search area
-					toggleSearch = function(evt) {
-						// return if open and the input gets focused
-						if( evt.type.toLowerCase() === 'focus' && isOpen ) return false;
-
-						var offsets = morphsearch.getBoundingClientRect();
-						if( isOpen ) {
-							classie.remove( morphSearch, 'open' );
-
-							// trick to hide input text once the search overlay closes 
-							// todo: hardcoded times, should be done after transition ends
-							if( input.value !== '' ) {
-								setTimeout(function() {
-									classie.add( morphSearch, 'hideInput' );
-									setTimeout(function() {
-										classie.remove( morphSearch, 'hideInput' );
-										input.value = '';
-									}, 300 );
-								}, 500);
-							}
-							
-							input.blur();
-						}
-						else {
-							classie.add( morphSearch, 'open' );
-						}
-						isOpen = !isOpen;
-					};
-
-				// events
-				input.addEventListener( 'focus', toggleSearch );
-				ctrlClose.addEventListener( 'click', toggleSearch );
-				// esc key closes search overlay
-				// keyboard navigation events
-				document.addEventListener( 'keydown', function( ev ) {
-					var keyCode = ev.keyCode || ev.which;
-					if( keyCode === 27 && isOpen ) {
-						toggleSearch(ev);
-					}
-				} );
-
-
-				/***** for demo purposes only: don't allow to submit the form *****/
-				morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
-			})();
-		</script>
+		
 	</body>
 </html>
