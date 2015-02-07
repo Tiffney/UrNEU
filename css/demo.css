@@ -1,12 +1,5 @@
 @font-face {
-	font-weight: normal;
-	font-style: normal;
-	font-family: 'codropsicons';
-	src:url('../fonts/codropsicons/codropsicons.eot');
-	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
-		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
-		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+	font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
 }
 
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
@@ -14,10 +7,10 @@
 .clearfix:after { clear: both; }
 
 body {
-	background: #c1c1c1 url(../img/unsplash.jpg) no-repeat center bottom;
-	color: #fff;
+	background: #ff3737 url(../img/unsplash.jpg) no-repeat center bottom;
+	color: #ff3737;
 	font-size: 1em;
-	font-family: 'Raleway', Arial, sans-serif;
+	font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
 	min-height: 500px;
 }
 
@@ -118,7 +111,7 @@ a:focus {
 	font-weight: normal;
 	font-style: normal;
 	font-variant: normal;
-	font-family: 'codropsicons';
+	font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
 	line-height: 1;
 	speak: none;
 	-webkit-font-smoothing: antialiased;
