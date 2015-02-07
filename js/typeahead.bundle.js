@@ -1018,6 +1018,11 @@
             _managePreventDefault: function managePreventDefault(keyName, $e) {
                 var preventDefault, hintValue, inputValue;
                 switch (keyName) {
+                  case "enter":
+                      hintValue = this.getHint();
+                      inputValue = this.getInputValue();
+                      preventDefault = hintValue && hintValue !== inputValue && !withModifier($e);
+                      break;
                   case "tab":
                     hintValue = this.getHint();
                     inputValue = this.getInputValue();
@@ -1040,6 +1045,10 @@
                   case "tab":
                     trigger = !withModifier($e);
                     break;
+                  case "enter":
+                    trigger = !withModifier($e);
+                    break;
+
 
                   default:
                     trigger = true;
