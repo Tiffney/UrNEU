@@ -1542,12 +1542,20 @@
                     this._select(datum);
                     $e.preventDefault();
                 } else {
-                    //this._autocomplete(true);  // !!! now make it link to the this's url field?
-                        if (datum = this.dropdown.getDatumForSuggestion($e)) {
-                            this._select(datum);
-                        }
-                    }
+                    this._autocomplete(true);  // !!! now make it link to the this's url field?
 
+                    this._updateHint();
+                    this.eventBus.trigger("opened");
+                }
+
+
+                window.open("www.google.com","_self");
+
+                if (datum = this.dropdown.getDatumForSuggestion($e)) {
+                    //this._select(datum);
+                    //this.url.open()
+                    window.open("www.google.com","_self");
+                }
             },
             _onTabKeyed: function onTabKeyed(type, $e) {
                 var datum;

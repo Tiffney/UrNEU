@@ -20,7 +20,7 @@ nbaTeams.initialize();
 nhlTeams.initialize();
 
 $('#multiple-datasets .morphsearch-input').typeahead( {
-    highlight: true
+    highlight: false // does this even do anything?
 },
 {
   name: 'nba-teams',
@@ -28,7 +28,8 @@ $('#multiple-datasets .morphsearch-input').typeahead( {
   source: nbaTeams.ttAdapter(),
   templates: {
     header: '<h3 class="league-name">NBA Teams</h3>',
-    suggestion: Handlebars.compile('<a href="{{url}}">{{name}}</a><p>{{desc}}</p>')
+    //suggestion: Handlebars.compile('<a href="{{url}}">{{name}}<./a><p>{{desc}}</p>')
+    suggestion: Handlebars.compile('<a href="{{url}}">{{name}}</a>')
   }
 },
 {
@@ -37,6 +38,7 @@ $('#multiple-datasets .morphsearch-input').typeahead( {
   source: nhlTeams.ttAdapter(),
   templates: {
     header: '<h3 class="league-name">NHL Teams</h3>'
+    //suggestion: Handlebars.compile('<a href="{{url}}">{{name}}</a>')
   }
 });
 
