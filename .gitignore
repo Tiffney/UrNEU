@@ -1,1 +1,7 @@
-*.xml
+/*.user
+/*.sln
+/*.suo
+/.idea*
+/*.xml
+/bower_components
+/node_modules/*
