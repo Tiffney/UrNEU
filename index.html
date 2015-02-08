@@ -29,6 +29,7 @@
 		<div id="morphsearch" class="morphsearch">
 				<form id="multiple-datasets" class="morphsearch-form">
 					<input class="morphsearch-input" type="text" placeholder="Search..."/>
+<<<<<<< HEAD
 					<button class="morphsearch-submit" type="submit">Search</button>
                 </form>
 				<div class="morphsearch-content">
@@ -142,10 +143,30 @@
 					</div>
 				</div><!-- /morphsearch-content -->
 			</div><!-- /morphsearch -->
+=======
+					<div class="morphsearch-submit" type="submit">Search</div>
+                </div>
+    			<div class="morphsearch-content">
+    				{{#each categories}}
+    					<div class="dummy-column">
+    						<h2>categories </h2>
+    						{{#each this}}
+    							<a class="dummy-media-object" href="{{url}}">
+    								<!-- <img class="round" alt="{{name}}"/> -->
+    								<h3>{{name}}</h3>
+    								<h4>{{desc}}</h4>
+    							</a>
+    						{{/each}}
+    					</div>
+    				{{/each}}
+    			</div><!-- /morphsearch-content -->
+>>>>>>> 8918e77... starting handlebars
     	<script src="js/handlebars.js"></script>
 		<script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/typeahead.bundle.js"></script>
 		<script src="js/search.js"></script>
+        		<script src="js/main.js"></script>
+                
             <script>
             $(document).ready(sizeContent);
 
