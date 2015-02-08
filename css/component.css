@@ -139,6 +139,15 @@ input[type="search"] { /* reset normalize */
 	opacity: 1;
 }
 
+.tt-dropdown-menu a {
+	color:#000000;
+}
+
+.tt-dropdown-menu a:hover {
+	color:#ffffff;
+}
+
+
 .dummy-column:nth-child(2) {
 	margin: 0 5%;
 }
